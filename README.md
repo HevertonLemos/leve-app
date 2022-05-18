@@ -2,7 +2,9 @@
 
 ## Requisitos
 Angular CLI: 11.2.19
+
 Node: 14.15.5
+
 Angular: 11.2.14
 
 ### Dependencias
