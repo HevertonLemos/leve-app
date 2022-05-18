@@ -1,0 +1,158 @@
+@import '~@angular/material/theming';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@include mat-core();
+
+$my-app-primary:    mat-palette($mat-gray, 50);
+$my-app-secondary:  mat-palette($mat-blue, 400);
+$my-app-accent:     mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn:       mat-palette($mat-deep-orange);
+$my-app-theme:      mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+:root {
+    --dark-blue: #00579D;
+    --medium-blue: #1976d2;
+    --light-blue: #D5EDFA;
+    --nearly-white-blue: #DCEBF0;
+    --black: #000000;
+    --dark-gray: #353B3B;
+    --medium-gray: #525153;
+    --light-gray: #D5DAD9;
+    --nearly-white: #F8F6F6;
+    --white: #FFFFFF;
+    --succeed: #69B904;
+    --error: #C80707;
+    --caution: #F28300;
+}
+
+body, text, span {
+    /*Body Text 01 - Montserrat - Regular 14pt | Espaçamento: -1,5% */
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    letter-spacing: -1.5%;
+
+    font-size: 8pt;
+    @media screen and (min-width: 1365px) {
+        font-size: 10pt;
+    }
+    @media screen and (min-width: 1919px) {
+        font-size: 14pt;
+    }
+}
+
+h1 {
+    /*Headline 01 - Montserrat - Bold 24pt | Espaçamento: -1,5% */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 1.5% 1.5% 1.5% 1.5%;
+    letter-spacing: -1.5%;
+
+    font-size: 18pt;
+    @media screen and (min-width: 1365px) {
+        font-size: 20pt;
+    }
+    @media screen and (min-width: 1919px) {
+        font-size: 24pt;
+    }
+}
+h2 {
+    /*Headline 02 - Montserrat - Bold 18pt | Espaçamento: -1,5% */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 1.5% 1.5% 1.5% 2.5%;
+    letter-spacing: -1.5%;
+    color: var(--medium-blue);
+
+    font-size: 8pt;
+    @media screen and (min-width: 1365px) {
+        font-size: 10pt;
+    }
+    @media screen and (min-width: 1919px) {
+        font-size: 14pt;
+    }
+}
+h3 {
+    /*Headline 03 - Montserrat - SemiBold 22pt | Espaçamento: -1,5%*/
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 1.5% 1.5% 1.5% 1.5%;
+    letter-spacing: -1.5%;
+    line-height: 20px;
+
+    font-size: 16pt;
+    @media screen and (min-width: 1365px) {
+        font-size: 18pt;
+    }
+    @media screen and (min-width: 1919px) {
+        font-size: 30pt;
+    }
+}
+
+input {
+    /*Input Text 01 - Montserrat - Regular 15pt | Espaçamento: -1,5%*/
+    font-family: 'Roboto', sans-serif;
+    margin: 1.5% 1.5% 1.5% 1.5%;
+    letter-spacing: -1.5%;
+    caret-color: black !important;
+
+    min-height: 20px;
+    max-height: 40px;
+    min-width: 80px;
+    max-width: 100px;
+    font-size: 12px;
+    @media screen and (min-width: 1365px) {
+        min-height: 24px;
+        max-height: 48px;
+        min-width: 100px;
+        max-width: 150px;
+        font-size: 12pt;
+    }
+    @media screen and (min-width: 1919px) {
+        min-height: 28px;
+        max-height: 56px;
+        min-width: 200px;
+        max-width: 250px;
+        font-size: 14pt;
+    }
+}
+
+button {
+    /*Button Text 01 - Montserrat - Medium 16pt | Espaçamento: 10% | AA*/
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 10%;
+}
+.mat-button {
+    min-width: max-content !important;
+    width: fit-content !important;
+
+    min-height: 16px;
+    max-height: 32px;
+    font-size: 8px;
+    @media screen and (min-width: 1365px) {
+        min-height: 20px;
+        max-height: 40px;
+        font-size: 10pt;
+    }
+    @media screen and (min-width: 1919px) {
+        min-height: 28px;
+        max-height: 56px;
+        font-size: 14pt;
+    }
+    background-color: var(--nearly-whit);
+    color: var(--dark-blue);
+    border: solid !important;
+    border-width: thin !important;
+    border-color: var(--dark-blue) !important;
+    border-radius: 5px 5px 5px 5px !important;
+}
+.mat-button:hover {
+    color: var(--medium-blue);
+    border-color: var(--medium-blue);
+}
+.mat-button:disabled {
+    background-color: var(--light-gray);
+}

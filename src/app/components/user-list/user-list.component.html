@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="list">
+      <h2 class="title" >{{title}}</h2>
+      <mat-divider class="break"></mat-divider>
+      <div class="add-item">
+        <div class="add-item1">
+            <input class="add-item-input" matInput [(ngModel)]="selectedUser.cpf"
+            placeholder="  CPF" disabled="{{!isAdd}}">
+            <input class="add-item-input" matInput [(ngModel)]="selectedUser.name"
+            placeholder="  Nome" >
+            <input class="add-item-input" matInput [(ngModel)]="selectedUser.birtday"
+            placeholder="  Aniversário" >
+            <button mat-icon-button *ngIf="isAdd" class="add-item-icon"
+            matTooltip="Adicionar item" matTooltipPosition="below"
+            (click)="addItem()">
+                <mat-icon class="icon-add">add</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="!isAdd" class="add-item-icon"
+                  matTooltip="Edit item" matTooltipPosition="below" (click)="updateItem()">
+                  <mat-icon class="icon-add">edit_outline</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="!isAdd" class="add-item-icon"
+                matTooltip="Edit item" matTooltipPosition="below" (click)="cancelUpdate()">
+                <mat-icon class="icon-add">close_outline</mat-icon>
+            </button>
+        </div>
+      </div>
+      <div class="list-main">
+          <div (click)="selectItem(user)" class="list-info-item" *ngFor="let user of userList"
+          [ngClass]="{'active-item': user?.cpf === selectedUser?.cpf}">
+            <div>{{ user?.cpf }}</div>
+            <div>{{ user?.name }}</div>
+            <div>{{ user?.birtday }}</div>
+            <div class="align-right">
+              <button mat-icon-button (click)="removeItem(user.cpf)"
+                  matTooltip="Remover item" matTooltipPosition="below">
+                  <mat-icon class="icon-delete">delete_outline</mat-icon>
+              </button>
+            </div>
+          </div>
+          <mat-divider class="break"></mat-divider>
+
+          <h2 class="title" >Cálculo dos salários dos usuários</h2>
+          <div class="list-header">
+            <div>CPF</div>
+            <div>Media de salário</div>
+            <div>Media de descontos</div>
+            <div>Maior salário</div>
+            <div>Menor salário</div>
+          </div>
+
+            <div class="list-info-item"
+                *ngFor="let user of userCalcule">
+                <div>{{ user?.cpf }}</div>
+                <div>{{ user?.salaryAverage | number: '1.2-2'}}</div>
+                <div>{{ user?.discountAverage | number: '1.2-2'}}</div>
+                <div>{{ user?.bigestSalary | number: '1.2-2'}}</div>
+                <div>{{ user?.lowestSalary | number: '1.2-2'}}</div>
+            </div>
+      </div>
+  </div>
+
+</div>
